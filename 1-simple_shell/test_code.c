@@ -41,16 +41,17 @@ int main(void)
         token = strtok(NULL, delim);
     }
     args[j] = NULL;
-    //printf("i: %d, j: %d\n", i, j);
-
+    /* Print content of args*/
     for (c = 0; args[c] != NULL; c++)
     {
         printf("%s\n", args[c]);
     }
+    /* Free memories allocated */
     for (i = 0; i < c; i++)
     {
         free(args[i]);
     }
+    /* Free pointers */
     free(linecpy);
     free(args);
     return(0);
