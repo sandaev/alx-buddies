@@ -9,7 +9,7 @@ int main(void)
     ssize_t len;
     size_t n = 0;
     char *delim = " \n";
-    int i, j, c;
+    int i, j, c, len_args;
 
     len = getline(&line, &n, stdin);
     linecpy = strdup(line);
@@ -21,7 +21,8 @@ int main(void)
         token = strtok(NULL, delim);
     }
     free(line);
-    args = malloc(sizeof(char *) * j);
+    len_args = j + 1;
+    args = malloc(sizeof(char *) * len_args);
     if (args == NULL)
     {
         printf("Unable to allocate memory\n");
