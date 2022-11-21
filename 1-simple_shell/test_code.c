@@ -21,7 +21,7 @@ int main(void)
         token = strtok(NULL, delim);
     }
     free(line);
-    len_args = j + 1;
+    len_args = j + 1; /* Fixed my headache free(): Invalid pointer */
     args = malloc(sizeof(char *) * len_args);
     if (args == NULL)
     {
